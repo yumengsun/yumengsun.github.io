@@ -17,7 +17,7 @@
       background-size: cover;
       background-attachment: fixed;
       color:white;
-      font-family: Helvetica;
+      font-family: Lucida Grande;
       
       }
      
@@ -46,16 +46,16 @@
       }
      
       .navbar-inverse .navbar-brand:hover,
-.navbar-inverse .navbar-brand:focus {
-    color: #484943;
+      .navbar-inverse .navbar-brand:focus {
+      color: #484943;
       }
 
       .navbar-inverse .navbar-nav > li > a {
-    color: #484943;
+      color: #484943;
       }
       .navbar-inverse .navbar-nav > .active > a, 
-.navbar-inverse .navbar-nav > .active > a:hover, 
-.navbar-inverse .navbar-nav > .active > a:focus {
+      .navbar-inverse .navbar-nav > .active > a:hover, 
+      .navbar-inverse .navbar-nav > .active > a:focus {
       background-color: #484943;
       font-weight: bold;      
 }
@@ -83,7 +83,7 @@
   <div class="container-fluid">
       <ul class="nav navbar-nav">
         <li><a href="index.html">Home</a></li>
-        <li><a href="#">CV</a></li>
+        <li><a href="doc/CV-YumengSUN.pdf" target="_blank"> CV</a></li>
         <li id="myScrollspy" class="active" class = "dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">PROJECTS<span class="caret"></span></a>
 	<ul class="dropdown-menu">
             <li><a href="#M">Modeling</a></li>
@@ -102,13 +102,13 @@
       <h2>Data Science Portfolio</h2><hr>
       <p>This page highlights several of my data science work, which are classified into two categories:<a href="#M">Modeling</a> and <a href="#DA">Data Analysis & Visualization</a>.<br><br> These work were done in either <b>R</b> or <b>Python</b>.</p>
    </div>
-     <!--M starts here -->
+ <!--M starts here -->
      
      <div class="col-md-12" id = "M">
-       <h2>MODELING</h2><hr>
-       <h4><b>Predicting Location via a Statistical Indoor Positioning System </b>
-	     <i>(Language:R)</i><br><br>
-       </h4>
+       <h2><br><br>MODELING</h2><hr>
+       <h3><b>Predicting Location via a Statistical Indoor Positioning System </b>
+	     <small><i>(Language:R)</i></small><br><br>
+       </h3>
 	 <p><b>Data Description: </b><br>
 	   1000,000+ measurements of signal strength recorded between a known hand-held device and 6 stationary WiFi access points (routers) within a building at the University of Mannheim.
 	   <a href="http://crawdad.org/mannheim/compass/20080411/" target="_blank"> DOWNLOAD DATA</a><br>
@@ -158,13 +158,12 @@ id=00:02:2D:21:0F:33;pos=0.0,0.0,0.0;degree=0.0; 00:14:bf:b1:97:8a=-38,243700000
 
 
 <!---Data Analysis starts here --->
-   <div  class="col-md-12" id = "DA">
-     <h2>DATA ANALYSIS & VISUALIZATION</h2><hr>
-     
-   </div><!---Data Analysis ends here --->
-     <h4><b>Analyzing a Complex National Survey </b>
-	     <i>(Language:R)</i><br><br>
-     </h4>
+   <div class="col-md-12" id = "DA">
+     <h2><br><br>DATA ANALYSIS & VISUALIZATION</h2><hr>
+  
+     <h3><b>Analyzing a Complex National Survey </b>
+	    <small> <i>(Language:R)</i></small><br><br>
+     </h3>
   <p><b>Data Description: </b><br>
     The <a href="http://www.bls.gov/tus/home.htm" target = "_blank">American Time Use Survey 2013</a> is a national survey on how, where and with whom Americans spend their time.<br>
     Two data files were selected to be used in this analysis:
@@ -276,7 +275,8 @@ id=00:02:2D:21:0F:33;pos=0.0,0.0,0.0;degree=0.0; 00:14:bf:b1:97:8a=-38,243700000
       <li>Multiple job holders and males have higher percentage in working on both weekdays and weekends than single job holders.</li>
   </ul><br>
   </p>
-  
+   </div> 
+  <!---Data Analysis ends here --->
     </div><!---row ends here --->
 
 </div><!---container ends here --->
