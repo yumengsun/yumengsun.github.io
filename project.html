@@ -75,7 +75,6 @@
 
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
-    <div>
       <ul class="nav navbar-nav">
         <li><a href="index.html">Home</a></li>
         <li><a href="#">CV</a></li>
@@ -87,15 +86,15 @@
 	</li>
         <li><a href="#">MORE ABOUT ME</a></li>
       </ul>
-    </div>
   </div>
 </nav>
 
  <div class="container">
    <div class="row"> 
-    <div class="col-md-12" id = "preface">
-      <h1>Data Science Portfolio</h1><hr>
-      <p>This page highlights several of my data science work, which are classified into two categories:<b>Modeling</b> and <b>Data Analysis & Visualization</b>.<br><br> These work were done in either <b>R</b> or <b>Python</b>.</p>
+   
+  <div class="jumbotron">
+      <h2>Data Science Portfolio</h2><hr>
+      <p>This page highlights several of my data science work, which are classified into two categories:<a href="#M">Modeling</a> and <a href="#DA">Data Analysis & Visualization</a>.<br><br> These work were done in either <b>R</b> or <b>Python</b>.</p>
     </div>
 
      <!--M starts here -->
@@ -107,64 +106,54 @@
        </h4>
 	 <p><b>Data Description: </b><br>
 	   1000,000+ measurements of signal strength recorded between a known hand-held device and 6 stationary WiFi access points (routers) within a building at the University of Mannheim.
-	   <a href="http://crawdad.org/mannheim/compass/20080411/" target="_blank"> Source</a><br><br>
+	   <a href="http://crawdad.org/mannheim/compass/20080411/" target="_blank"> Source</a><br>
 	 </p>
-       <p><b>Task:</b><br>Build a model to predict the location of a new unknown device based on the detected signals for the device.<br><br>
-	 <b>Algorithm: </b><br>K-Nearest-Neighbour<br><br>
+       <p><b>Task:</b><br>Build a model to predict the location of a new unknown device based on the detected signals for the device.<br>
+       </p>
+       <p><b>Algorithm: </b><br>K-Nearest-Neighbour<br>
        </p>
        <p><b>Raw Data (Snippet): </b>
-	 <br>Added '\' to indicate a continuation of the line.
-	 <pre># timestamp=2006-02-11 08:31:58
+	 <br>
+	 <pre>
+# timestamp=2006-02-11 08:31:58
 # usec=250
 # minReadings=110
-t=1139643118358;id=00:02:2D:21:0F:33;pos=0.0,0.0,0.0;degree=0.0;\
-00:14:bf:b1:97:8a=-38,2437000000,3;\
-00:14:bf:b1:97:90=-56,2427000000,3;\
-00:0f:a3:39:e1:c0=-53,2462000000,3;\</pre></p><br><br>
+t=1139643118358;
+id=00:02:2D:21:0F:33;pos=0.0,0.0,0.0;degree=0.0; 00:14:bf:b1:97:8a=-38,2437000000,3; 00:14:bf:b1:97:90=-56,2427000000,3; 00:0f:a3:39:e1:c0=-53,2462000000,3; 00:14:bf:b1:97:8d=-65,2442000000,3; 00:14:bf:b1:97:81=-65,2422000000,3; 00:14:bf:3b:c7:c6=-66,2432000000,3; 00:0f:a3:39:dd:cd=-75,2412000000,3; 00:0f:a3:39:e0:4b=-78,2462000000,3; 00:0f:a3:39:e2:10=-87,2437000000,3; 02:64:fb:68:52:e6=-88,2447000000,1; 02:00:42:55:31:00=-84,2457000000,1</pre>
+       </p>
       <p><b>Data Cleaning: </b><br>
 	<ul>
-  <li>Used regular expressions to split lines and save the result as a data frame of character variables.</li>
-  <li>Converted variables into a proper type (numeric or factor) and eliminated irrelevant variables.</li>
-  <li>Performed exploratory data analysis to figure out the 6 designated MAC addresses to keep and get rid of the noise addresses.</li>
-  <li>Re-organized the data frame to have a unique position-orientation combination in each row.</li>
-  <li>Ended up with a 1328x12 matrix.</li>
-</ul> <br><br> </p>
+	  <li>Used regular expressions to split lines and save the result as a data frame of character variables.</li>
+	  <li>Converted variables into a proper type (numeric or factor) and eliminated irrelevant variables.</li>
+	  <li>Performed exploratory data analysis to figure out the 6 designated MAC addresses to keep and get rid of the noise addresses.</li>
+	  <li>Re-organized the data frame to have a unique position-orientation combination in each row.</li>
+	  <li>Ended up with a 1328x12 matrix.</li>
+	</ul>
+      </p>
  
        <p><b>Modeling: </b><br>
-       </p><ul>
+       </p>
+       <ul>
 	 <li> Used K-Nearest Neighbors,i.e. the k closest training points (based on the Euclidean distance between signal strengths), to predict the new observation’s position (x,y) by a weighted mean of the (x,y) positions of the k training points, with the weights being: (1/di)/(sum of all 1/d), where di is the distance to neighbour i.</li>
 
      	<li>Used 5-fold cross-validation on the offline data to determine the best k-nAngle combination to use. We used sum of squared errors to evaluate the performances of k = 1,2,...10, nAngle = 1,...8.</li>
-	 <li>Achieved minimum sums of squared error when k = 10 and nAngle = 4.</li></ul><br><br>
+	 <li>Achieved minimum sums of squared error when k = 10 and nAngle = 4.</li>
+       </ul>
   
-   <p><b>Validation with test data (110 measurements at 60 locations):</b></p>
-    <img src = "proj/1/res1.jpg" height="360" width="600"></img><br><br>
-    </div>
+       <p><b>Validation with test data (110 measurements at 60 locations):</b><br>
+	 <img src = "proj/1/res1.jpg" height="360" width="600"></img><br><br>
+       </p>
+
+     </div><!---M ends here --->
 
 
-<!---M ends here --->
+
 <!---Data Analysis starts here --->
    <div  class="col-md-12" id = "DA">
-     <h2>DATA ANALYSIS & VISUALIZATION</h3><hr> </div>
+     <h2>DATA ANALYSIS & VISUALIZATION</h2><hr>
+   </div><!---Data Analysis ends here --->
     
-    <div class="col-md-4">
-      <p>http://www.bls.gov/tus/datafiles_2013.htm</p>
-    </div>
-    <div class="col-md-8">
-      <p><strong>Note: On a large screen the conten<br>t will be displayed as a three-column layout. (Just enlarge the browser window to se<br>e the effect). However, the content will automatically adjust itself into a single-c<br>olumn layout on a small screen. So, with Bootstrap, our page is now responsive to the screen size and adjusts itself accordingly.<br><br><br></strong></p>
-    </div>
-    
-    <div class="col-md-4">
-      <p>Lorem ipsum dolor sit amet, consectetur adipis<br>icing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut eni<br>m ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-    </div>
-    <div class="col-md-8">
-      <p><strong>Note: On a large screen the content will be di<br>splayed as a three-column layout. (Just enlarge the browser window to see the effect). However, the content will automatically adjust itself into a single-column layout o<br>n a small screen. So, with Bootstrap, our page is now responsive to the screen size a<br>nd adjusts itself accordingly.</strong></p>
-    </div>
-
-</div>
-
-   
-</div>
-</div>
+  </div><!---row ends here --->
+</div><!---container ends here --->
 </body>
 </html>
