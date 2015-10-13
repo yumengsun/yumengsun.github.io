@@ -83,30 +83,35 @@
 	<ul class="dropdown-menu">
             <li><a href="#M">Modeling</a></li>
             <li><a href="#DA">Data Analysis & Visualization</a></li>
-          </ul></li>
+        </ul>
+	</li>
         <li><a href="#">MORE ABOUT ME</a></li>
       </ul>
     </div>
   </div>
 </nav>
- <div class="container">
-   <div class="row">
 
-    
+ <div class="container">
+   <div class="row"> 
     <div class="col-md-12" id = "preface">
       <h1>Data Science Portfolio</h1><hr>
       <p>This page highlights several of my data science work, which are classified into two categories:<b>Modeling</b> and <b>Data Analysis & Visualization</b>.<br><br> These work were done in either <b>R</b> or <b>Python</b>.</p>
     </div>
 
-     <!---M starts here --->
+     <!--M starts here -->
      
-     <div  class="col-md-12" id = "M">
+     <div class="col-md-12" id = "M">
        <h2>MODELING</h2><hr>
-       <h4><b>Predicting Location via a Statistical Indoor Positioning System <b><i>(Language:R)</i><br><br></h4>
-       <div class="col-md-4" ><p><b>Data Description: </b><br> 1000,000+ measurements of signal strength recorded between a known hand-held device and 6 stationary WiFi access points (routers) within a building at the University of Mannheim.<a href="http://crawdad.org/mannheim/compass/20080411/" target="_blank"> Source</a><br><br></p> </div>
-       <div class="col-md-8" ><p><b>Task: </b>Build a model to predict the location of a new unknown device based on the detected signals for the device.<br><br><b>Algorithm: </b>K-Nearest-Neighbour<br><br><br><br><br></p>
-  </div>
-     <div class="col-md-4" > 
+       <h4><b>Predicting Location via a Statistical Indoor Positioning System </b>
+	     <i>(Language:R)</i><br><br>
+       </h4>
+	 <p><b>Data Description: </b><br>
+	   1000,000+ measurements of signal strength recorded between a known hand-held device and 6 stationary WiFi access points (routers) within a building at the University of Mannheim.
+	   <a href="http://crawdad.org/mannheim/compass/20080411/" target="_blank"> Source</a><br><br>
+	 </p>
+       <p><b>Task:</b><br>Build a model to predict the location of a new unknown device based on the detected signals for the device.<br><br>
+	 <b>Algorithm: </b><br>K-Nearest-Neighbour<br><br>
+       </p>
        <p><b>Raw Data (Snippet): </b>
 	 <br>Added '\' to indicate a continuation of the line.
 	 <pre># timestamp=2006-02-11 08:31:58
@@ -115,29 +120,24 @@
 t=1139643118358;id=00:02:2D:21:0F:33;pos=0.0,0.0,0.0;degree=0.0;\
 00:14:bf:b1:97:8a=-38,2437000000,3;\
 00:14:bf:b1:97:90=-56,2427000000,3;\
-00:0f:a3:39:e1:c0=-53,2462000000,3;\</pre></p>
-    </div>
-    <div class="col-md-8">
-      <p><b>Data Cleaning: </b><br><br>
+00:0f:a3:39:e1:c0=-53,2462000000,3;\</pre></p><br><br>
+      <p><b>Data Cleaning: </b><br>
 	<ul>
   <li>Used regular expressions to split lines and save the result as a data frame of character variables.</li>
   <li>Converted variables into a proper type (numeric or factor) and eliminated irrelevant variables.</li>
   <li>Performed exploratory data analysis to figure out the 6 designated MAC addresses to keep and get rid of the noise addresses.</li>
   <li>Re-organized the data frame to have a unique position-orientation combination in each row.</li>
   <li>Ended up with a 1328x12 matrix.</li>
-</ul> <br><br> <br><br> </p>
-    </div>
+</ul> <br><br> </p>
+ 
+       <p><b>Modeling: </b><br>
+       </p><ul>
+	 <li> Used K-Nearest Neighbors,i.e. the k closest training points (based on the Euclidean distance between signal strengths), to predict the new observation’s position (x,y) by a weighted mean of the (x,y) positions of the k training points, with the weights being: (1/di)/(sum of all 1/d), where di is the distance to neighbour i.</li>
 
-    <div class="col-md-4">
-      <p><b>Modeling: </b><br></p>	<ul>
-  <li> Used K-Nearest Neighbors,i.e. the k closest training points (based on the Euclidean distance between signal strengths), to predict the new observation’s position (x,y) by a weighted mean of the (x,y) positions of the k training points, with the weights being: (1/di)/(sum of all 1/d), where di is the distance to neighbour i.</li>
-
-     	
-  <li>Used 5-fold cross-validation on the offline data to determine the best k-nAngle combination to use. We used sum of squared errors to evaluate the performances of k = 1,2,...10, nAngle = 1,...8.</li>
-  <li>Achieved minimum sums of squared error when k = 10 and nAngle = 4.</li></ul>
+     	<li>Used 5-fold cross-validation on the offline data to determine the best k-nAngle combination to use. We used sum of squared errors to evaluate the performances of k = 1,2,...10, nAngle = 1,...8.</li>
+	 <li>Achieved minimum sums of squared error when k = 10 and nAngle = 4.</li></ul><br><br>
   
-    </div>
-    <div class="col-md-8"><p><b>Validation with test data (110 measurements at 60 locations):</b></p>
+   <p><b>Validation with test data (110 measurements at 60 locations):</b></p>
     <img src = "proj/1/res1.jpg" height="360" width="600"></img><br><br>
     </div>
 
