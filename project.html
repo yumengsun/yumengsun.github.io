@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-     <title>Projects</title>
+     <title>Yumeng's Projects</title>
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1">
      <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -90,7 +90,7 @@
             <li><a href="#DA">Data Analysis & Visualization</a></li>
         </ul>
 	</li>
-        <li><a href="#">MORE ABOUT ME</a></li>
+        <!-- <li><a href="readMore.html">ABOUT ME</a></li> -->
       </ul>
   </div>
 </nav>
@@ -275,8 +275,36 @@ id=00:02:2D:21:0F:33;pos=0.0,0.0,0.0;degree=0.0; 00:14:bf:b1:97:8a=-38,243700000
       <li>Multiple job holders and males have higher percentage in working on both weekdays and weekends than single job holders.</li>
   </ul><br>
   </p>
-   </div> 
-  <!---Data Analysis ends here --->
+   
+     <h3><b>Analyzing a Big Database </b>
+	    <small> <i>(Language:Python & SQLite3)</i></small><br><br>
+     </h3>
+<p><b>Raw Data:</b><br></p>
+<p>A table storing  at least 10,000,000 email addresses and 100,000 domains. Schema:<br>
+ <pre>CREATE TABLE mailing (
+	addr VARCHAR(255) NOT NULL
+   );</pre>
+ <p><b>Task:</b><br></p>
+<p> Write a Python script that updates another table which holds a daily count of email addresses by their domain name. Use this table to report the top 50 domains by count sorted by percentage growth of the last 30 days compared to the total.</p>
+
+<p><b>Approach: </b><br><ul><li>Using regular expressions to extract domain infomation from the raw data and create a new data frame with domain names and entry dates.</li><li> Update the new table <i>Daily Count</i> based on the new data frame.</li> <li>Use SQL commands to calculate total counts for each domain.</li></ul> </p>
+
+<p><b>Code: </b><br>
+  <a href="https://github.com/yumengsun/test-index/blob/master/main.py"> Python Script </a> <br><a href="https://github.com/yumengsun/test-index/blob/master/domain-date%20generator.ipynb">Test Data Generator</a> 
+</p>
+
+ <h3><b>3-D Scatterplot of Infant Mortality Rate and Related Variables Based on 2013 CIA Factbook </b><small> <i>(Language:R)</i></small><br><br>
+</h3>
+<p><b>Raw Data:</b><br>XML formatted 2013 CIA Factbook. <a href="http://www.stat.berkeley.edu/users/nolan/data/factbook/factbook.xml"> Data Source(large - will take a while to load) </a> </p>
+<p><b>Data Visualization:</b><br>Note: county codes and country names can be found in the appendix of the factbook.<br></p>
+ <p id = "pict">
+    <img src ="proj/3/dv1.jpg" width ="505" height = "484" >
+  </p>
+</div>
+
+
+<!---Data Analysis ends here --->
+
     </div><!---row ends here --->
 
 </div><!---container ends here --->

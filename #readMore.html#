@@ -91,22 +91,7 @@
 
 
 <div class="container">  
-  <ul class = "row">
-    <li class="col-lg-2 col-md-2 col-sm-3 col-xs-4">
-      <img class = "pic" src = "images/me/square/asia/bj.jpg" ></li>
-    <li class="col-lg-2 col-md-2 col-sm-3 col-xs-4">
-      <img src = "images/me/square/asia/hh.jpg" ></li>
-    <li class="col-lg-2 col-md-2 col-sm-3 col-xs-4">
-      <img src = "images/me/square/asia/hk.jpg" ></li>
-    <li class="col-lg-2 col-md-2 col-sm-3 col-xs-4">
-      <img src = "images/me/square/asia/hz.jpg"></li>
-    <li class="col-lg-2 col-md-2 col-sm-3 col-xs-4">
-      <img src = "images/me/square/asia/seo.jpg" ></li>
-    <li class="col-lg-2 col-md-2 col-sm-3 col-xs-4">
-      <img src = "images/me/square/asia/sh.jpg" ></li>
-    <li class="col-lg-2 col-md-2 col-sm-3 col-xs-4">
-      <img src = "images/me/square/asia/sz.jpg"></li>
-  </ul>
+  
 </div><!---container ends here --->
 </body>
 </html>
